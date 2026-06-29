@@ -1,0 +1,10 @@
+<form method="post">
+  {% for col in columns %}
+    <label>{{ col }}: <input type="number" step="any" name="{{ col }}" required></label><br>
+  {% endfor %}
+  <button type="submit">Predict</button>
+</form>
+
+{% if result %}
+  <h3>{{ result.label }} (confidence: {{ result.confidence }})</h3>
+{% endif %}
