@@ -37,9 +37,3 @@ emotion_classifier/
 - **SoC** — the `models/` → `controllers/` → `views/` split is the MVC structure itself: each layer is independent and replaceable on its own.
 - **Avoid premature optimization** — `classifier.py` calls `model.predict()` directly, no batching/caching/quantization added before there was evidence it was needed.
 - **Law of Demeter** — both views call `controller.get_prediction(raw_data)` and get back `{label, confidence}`, never touching `scaler` or `model` directly.
-## Design principles applied
-- **SoC / MVC** — model, controller, and views don't know about each other's internals.
-- **DRY** — `prepare_input()` is the single place raw data becomes model-ready.
-- **YAGNI** — no auth, no DB, no logging; just specs in, prediction out.
-- **SOLID (SRP/DIP)** — each file has one job; controller depends only on `predict()`'s interface, not its implementation.
-- **Law of Demeter** — views call `get_prediction(raw_data)` and never touch `model` or `scaler` directly.
