@@ -1,5 +1,6 @@
-from models.classifier import predict
-from models.preprocces import prepare_input, scaler
+from models.classifier import predict , scaler
+from models.preprocessing import prepare_input
+
 
 PRICE_LABELS = {0: "Low cost", 1: "Medium cost", 2: "High cost", 3: "Very high cost"}
 
