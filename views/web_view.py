@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from controllers.predict_controller import get_prediction
-from models.preprocces import FEATURE_COLUMNS
+from models.preprocessing import FEATURE_COLUMNS
 
 app = Flask(__name__)
 
